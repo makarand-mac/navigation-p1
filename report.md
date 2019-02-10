@@ -12,6 +12,14 @@ The Goal of the agent is to pickup yellow bananas while avoiding purple ones
 - `Number of actions: 4`<br>
 - `State Length : 37` <br>
 
+## Parameter Values
+
+- MAX_EPISODES: 2500
+- MAX_TIMESTEPS_EACH_EPISODES: 1000
+- EPSILON_START: 1.0
+- EPSILON_MIN: 0.01
+- EPSILON_DECAY: 0.999
+
 ## Network Info
 
 - Linear Layer:
