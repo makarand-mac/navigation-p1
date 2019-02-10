@@ -14,7 +14,7 @@ env = UnityEnvironment(file_name="./Banana_Linux/Banana.x86_64")
 brain_name = env.brain_names[0]
 brain = env.brains[brain_name]
 
-def dqn(n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.995):
+def dqn(n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.999):
     """Deep Q-Learning.
     
     Params
