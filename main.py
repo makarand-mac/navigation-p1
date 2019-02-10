@@ -7,14 +7,7 @@ from unityagents import UnityEnvironment
 
 from agent import Agent
 
-# please do not modify the line below
-env = UnityEnvironment(file_name="./Banana_Linux/Banana.x86_64")
-
-# get the default brain
-brain_name = env.brain_names[0]
-brain = env.brains[brain_name]
-
-def dqn(n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.999):
+def dqn(n_episodes=2500, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.999, env=None):
     """Deep Q-Learning.
     
     Params
@@ -25,6 +18,9 @@ def dqn(n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.99
         eps_end (float): minimum value of epsilon
         eps_decay (float): multiplicative factor (per episode) for decreasing epsilon
     """
+    # get the default brain
+    brain_name = env.brain_names[0]
+    brain = env.brains[brain_name]
 
     # reset the environment
     env_info = env.reset(train_mode=True)[brain_name]
@@ -43,7 +39,7 @@ def dqn(n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.99
     state_size = len(state)
     print('States have length:', state_size)
 
-    agent = Agent(state_size=37, action_size=4, seed=0)
+    agent = Agent(state_size=37, action_size=4)
     average_score = dict()             # average score list containing avg score every 100 episode
     scores = []                        # list containing scores from each episode
     scores_window = deque(maxlen=100)  # last 100 scores
@@ -79,6 +75,7 @@ def dqn(n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.99
             print('\nEnvironment solved in {:d} episodes!\tAverage Score: {:.2f}'.format(i_episode-100, np.mean(scores_window)))
             torch.save(agent.qnetwork_local.state_dict(), 'checkpoint.pth')
             break
+    env.close()
     return scores
 
 def play(n_episodes=5, max_t=1000, eps_start=0, eps_end=0.00, eps_decay=0):
@@ -92,8 +89,14 @@ def play(n_episodes=5, max_t=1000, eps_start=0, eps_end=0.00, eps_decay=0):
         eps_end (float): minimum value of epsilon
         eps_decay (float): multiplicative factor (per episode) for decreasing epsilon
     """
+    # please do not modify the line below
+    env = UnityEnvironment(file_name="./Banana_Linux/Banana.x86_64")
 
-    agent = Agent(state_size=37, action_size=4, seed=0)
+    # get the default brain
+    brain_name = env.brain_names[0]
+    brain = env.brains[brain_name]
+
+    agent = Agent(state_size=37, action_size=4)
     state_dict = torch.load('checkpoint.pth')
     agent.qnetwork_local.load_state_dict(state_dict)
     eps = eps_start                    # initialize epsilon
@@ -116,10 +119,3 @@ def play(n_episodes=5, max_t=1000, eps_start=0, eps_end=0.00, eps_decay=0):
                 break
 
         print('\rEpisode {}\t Score: {:.2f}'.format(i_episode, score))
-
-
-def plot_scores(scores, average_score): 
-    pass
-
-play()
-env.close()
