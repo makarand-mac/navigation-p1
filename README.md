@@ -4,7 +4,7 @@ DQN Agent solving Unity Banana Environment
 ## Requirements Linux/Mac/Windows
 
 - python 3.6
-- virtualenv set up
+- `virtualenv` set up
 
 ## Setup
 ### Linux
