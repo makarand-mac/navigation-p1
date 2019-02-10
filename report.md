@@ -77,5 +77,5 @@ Environment solved in 2029 episodes!	Average Score: 13.00
 - Tryout different initial weights to measure impact on training time
 - Training more to achieve higher rewards
 - Double DQN
-- Pririotized Experience Replay
+- Prioritized Experience Replay
 - Policy Based Methods
