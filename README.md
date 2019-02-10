@@ -17,7 +17,7 @@ DQN Agent solving Unity Banana Environment
 
 - Clone the repository
 - Download appropiate env from here : [Environment](https://github.com/udacity/deep-reinforcement-learning/tree/master/p1_navigation#getting-started)
-- Replace executable path of downloaded env in `DQN_solution.ipynb`
+- Replace executable path of downloaded env in `main.py train method`
 - Run `python3 -m pip install -r requirements.txt`
 - Check `DQN_solution.ipynb` notebook for solution
 
