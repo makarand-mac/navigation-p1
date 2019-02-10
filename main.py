@@ -93,23 +93,6 @@ def play(n_episodes=5, max_t=1000, eps_start=0, eps_end=0.00, eps_decay=0):
         eps_decay (float): multiplicative factor (per episode) for decreasing epsilon
     """
 
-    # reset the environment
-    env_info = env.reset(train_mode=False)[brain_name]
-
-    # number of agents in the environment
-    print('Number of agents:', len(env_info.agents))
-
-    # number of actions
-    action_size = brain.vector_action_space_size
-    print('Number of actions:', action_size)
-
-    # examine the state space 
-    state = env_info.vector_observations[0]
-    print('States look like:', state)
-    
-    state_size = len(state)
-    print('States have length:', state_size)
-
     agent = Agent(state_size=37, action_size=4, seed=0)
     state_dict = torch.load('checkpoint.pth')
     agent.qnetwork_local.load_state_dict(state_dict)
