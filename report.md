@@ -15,7 +15,7 @@ The Goal of the agent is to pickup yellow bananas while avoiding purple ones
 ## Parameter Values
 
 - MAX_EPISODES: 2500
-- MAX_TIMESTEPS_EACH_EPISODES: 1000
+- MAX_TIMESTEPS_EACH_EPISODE: 1000
 - EPSILON_START: 1.0
 - EPSILON_MIN: 0.01
 - EPSILON_DECAY: 0.999
