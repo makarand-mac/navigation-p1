@@ -25,4 +25,4 @@ DQN Agent solving Unity Banana Environment
 
 - Run `python3 run.py`
 
-## [Report](./report.md)
+### [Report](./report.md)
