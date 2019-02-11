@@ -19,6 +19,7 @@ The Goal of the agent is to pickup yellow bananas while avoiding purple ones
 - EPSILON_START: 1.0
 - EPSILON_MIN: 0.01
 - EPSILON_DECAY: 0.999
+- GAMMA: 0.99
 
 ## Network Info
 
