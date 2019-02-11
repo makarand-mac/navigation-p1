@@ -79,3 +79,4 @@ Environment solved in 2029 episodes!	Average Score: 13.00
 - Double DQN
 - Prioritized Experience Replay
 - Policy Based Methods
+- Rainbow Architecture
