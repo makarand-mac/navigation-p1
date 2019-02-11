@@ -1,6 +1,13 @@
 # Udacity Navigation Project
 DQN Agent solving Unity Banana Environment
 
+## Environment Info
+
+- `Number of agents: 1`<br>
+- `Number of actions: 4`<br>
+- `State Length : 37` <br>
+- `Environment Solved: 2129 episodes (avg 13.00)`
+
 ## Requirements Linux/Mac/Windows
 
 - python 3.6
